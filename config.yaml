@@ -1,0 +1,33 @@
+symbols:
+  - 000878
+
+email_enable: True
+email_to: "gelu.kam@foxmail.com"
+email_host: "smtp.qq.com"
+email_port: 465
+email_user: "gelu.kam@foxmail.com"
+email_pass: "attbrgfbjyoabeae"
+
+wechat_work_enable: False
+wechat_work_webhook: ""
+feishu_enable: False
+feishu_webhook: ""
+telegram_enable: False
+telegram_token: ""
+telegram_chat_id: ""
+discord_enable: False
+discord_webhook: ""
+slack_enable: False
+slack_webhook: ""
+
+analysis:
+  technical: True
+  capital: True
+  news: True
+  strategy: True
+  confidence: True
+
+output:
+  language: "zh"
+  detail: "medium"
+  save_local: False
