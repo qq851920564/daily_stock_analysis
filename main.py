@@ -2,9 +2,9 @@ import yaml
 import akshare as ak
 import yfinance as yf
 import pandas as pd
-from datetime import datetime
 import smtplib
 from email.mime.text import MIMEText
+from datetime import datetime
 
 def load_config():
     with open("config.yaml", "r", encoding="utf-8") as f:
