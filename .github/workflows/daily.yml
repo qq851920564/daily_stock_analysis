@@ -1,26 +1,26 @@
-name: 每日股票分析
+name: Daily Stock Analysis
 
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 10 * * *'  # 北京时间 18:00 运行
+    - cron: '0 10 * * *'  # 北京时间18:00自动运行
 
 jobs:
   run:
     runs-on: ubuntu-latest
     steps:
-      - name: 拉取代码
+      - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: 设置 Python 环境
+      - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.11"
 
-      - name: 安装依赖
+      - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install -r requirements.txt
+          pip install requests pandas numpy akshare yfinance PyYAML
 
-      - name: 运行分析脚本
+      - name: Run analysis
         run: python main.py
