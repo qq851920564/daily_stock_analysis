@@ -1,0 +1,24 @@
+name: 每日股票分析
+
+on:
+  push:
+  schedule:
+    - cron: '0 9 * * 1-5'  # 周一到周五，北京时间17:00（对应UTC 9:00）自动运行
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 拉取代码
+        uses: actions/checkout@v4
+
+      - name: 安装Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: 安装依赖
+        run: pip install akshare pandas
+
+      - name: 运行脚本
+        run: python main.py
